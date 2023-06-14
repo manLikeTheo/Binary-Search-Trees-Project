@@ -32,7 +32,7 @@ const tree = new Tree(randomArray(7));//BST from an array of 10 random numbers
 prettyPrint(tree.root); //print tree;
 
 // // CHECK IF TREE IS BALANCED
-console.log(`Check If balanced? ${tree.isBalanced()}`); //returns boolean
+console.log(`Check If balanced? ${tree.isBalance()}`); //returns boolean
 
 // //Log elements of Binary Search Tree in Level, pre post and in -- order Traversal
 console.log(`Level order Traversal --> ${tree.levelOrderTraversal()}`); 
@@ -45,11 +45,11 @@ console.log(`PostOrder Traversal --> ${tree.postOrderTraversal()}`);
 
 
 // //ADD A FEW NUMBERS TO BST - to unbalance it
-addNumbers(101); //Adds Random numbers from 1 - 100;
+addNumbers(12); //Adds Random numbers from 1 - 100;
 
 prettyPrint(tree.root); //prints the tree
 
-console.log(`Check Balance After Addition: ${tree.isBalanced()}`); 
+console.log(`Check Balance After Addition: ${tree.isBalance()}`); 
 
 //Rebalance BST
 // console.log(`Rebalance Tree`);
@@ -57,7 +57,7 @@ tree.reBalance(); //Re-balance BST;
 
 prettyPrint(tree.root);
 
-console.log(`Confirm if tree is balanced: ${tree.isBalanced()}`); //returns boolean
+console.log(`Confirm if tree is balanced: ${tree.isBalance()}`); //returns boolean
 
 console.log(`Level Order Traversal: ${tree.levelOrderTraversal()}`);
 

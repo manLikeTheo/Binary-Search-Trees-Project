@@ -164,17 +164,16 @@ export default class Tree {
         if(value.value > node.value) return this.getDepth(value, node.right) + 1;
     }
 
-    isBalanced() {
-        const totalNodes = this.inOrderTraversal();
-        for(let i = 0; i < totalNodes; i++) {
-            const node = this.find(totalNodes[i]);
-            const leftSubtree = this.getHeight(node.left);
-            const rightSubtree = this.getHeight(node.right);
-            //get the absolute value
-            if (Math.abs(leftSubtree - rightSubtree) < 1) return false;
-        }
-        return true;
-    } 
+    isBalance(node  = this.root) {
+        if(node === null) return true;
+        const hDiff = Math.abs(this.getHeight(node.left) - this.getHeight(node.right));
+
+        return (
+            hDiff <= 1 &&
+            this.isBalance(node.left) &&
+            this.isBalance(node.right)
+            );
+    }
 
     reBalance() {
         const activeTreeArray = this.inOrderTraversal();
